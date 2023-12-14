@@ -1,0 +1,36 @@
+[{
+  "id": 1,
+  "priority": 1,
+  "action": {
+    "type": "redirect",
+    "redirect": {
+      "regexSubstitution": "\\1.sinaimg.cn/"
+    }
+  },
+  "condition": {
+    "regexFilter": "([A-Za-z0-9\\.]+)\\.moyu\\.im/",
+    "resourceTypes": [
+      "image",
+      "main_frame"
+    ]
+  }
+},
+{
+  "id": 2,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{
+      "header": "Referer",
+      "operation": "set",
+      "value": "https://weibo.com/"
+    }]
+  },
+  "condition": {
+    "urlFilter": "||sinaimg.cn",
+    "resourceTypes": [
+      "image",
+      "main_frame"
+    ]
+  }
+}]
